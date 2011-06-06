@@ -81,7 +81,7 @@ varname = varliste[i]
 plot(MIdata[which(!is.na(data[,varname])),varname],expected[which(!is.na(data[,varname]))],col = "blue",pch=16,ylab="expected",xlab="observed/imputed",main=paste(varname))
 lines(lowess(MIdata[which(!is.na(data[,varname])),varname],expected[which(!is.na(data[,varname]))]),col="blue")
 points(MIdata[which(is.na(data[,varname])),varname],expected[which(is.na(data[,varname]))],col="red",pch=16)
-if(length(which(is.na(data[,varname])))>=nmis){
+if(length(which(is.na(data[,varname])))>nmis){
 lines(lowess(MIdata[which(is.na(data[,varname])),varname],expected[which(is.na(data[,varname]))]),col="red")}
 abline(0,1,lty=2)
 }

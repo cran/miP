@@ -2,10 +2,10 @@
 \alias{mi_marginplot}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Marginplot including imputed values.
+Marginplot including imputed values
 }
 \description{
-The Plot is divided into: A scatterplot between two variables to check potential correlations. Boxplots of the missing, observed and imputed values. The frequencies of the missing values.
+In addition to a standard scatterplot, information about missing and imputed values is shown in the plot margins.
 }
 \usage{
 mi_marginplot(x, input, leg=TRUE, col = c("skyblue","red","red4"), 
@@ -27,7 +27,7 @@ MI object produced by mi, mice or Amelia.
 draw a legend, TRUE or FALSE.
 }
 
-\item{col}{a vector of length three giving the colors to be used in the plot. The first color is used for the scatterplot and the boxplots for the available data, the second color for the univariate scatterplots and boxplots for the missing values in one variable, and the third color for the frequency of missing values in both variables (see 'Details'). If only one color is supplied, it is used for the bivariate and univariate scatterplots and the boxplots for missing values in one variable, whereas the boxplots for the available data are transparent. Else if two colors are supplied, the second one is recycled.
+\item{col}{a vector of length three defining the colors to be used in the plot. The first color is used for the scatterplot and the boxplots for the available data, the second color for the univariate scatterplots and boxplots for the missing values in one variable, and the third color for the frequency of missing values in both variables (see 'Details'). If only one color is supplied, it is used for the bivariate and univariate scatterplots and the boxplots for missing values in one variable, whereas the boxplots for the available data are transparent. Else if two colors are supplied, the second one is recycled.
 } 
 \item{alpha}{a numeric value between 0 and 1 giving the level of transparency of the colors, or NULL. This can be used to prevent overplotting.
 } 
@@ -58,9 +58,9 @@ graphical parameters, see \link[graphics]{par}.
 }
 }
 \details{
-Modified version of the marginplot which is included in the VIM package. Thanks to Matthias Templ, Andreas Alfons and Alexander Kowarik for creating a great package.
+Modified version of the marginplot which is included in the VIM package. Thanks to Matthias Templ, Andreas Alfons for letting me use their source code.
 
-Boxplots for available, missing and imputed data, as well as univariate scatterplots for missing values in one variable are shown in the plot margins.
+Boxplots for available, missing and imputed data, as well as scatterplots of the observed values. Missing values in one variable are shown in the plot margins.
 
 Furthermore, the frequencies of the missing values can be displayed by a number (lower left of the plot). The number in the lower left corner is the number of observations that are missing in both variables.
 }
@@ -77,8 +77,8 @@ Original code by Andreas Alfons and Matthias Templ, modifications by Paul Brix
 }
 \examples{
 data(FLAS)
-FLASmice = mice(FLAS)
-mi_marginplot(c("MLAT","ENG"),FLASmice,pch=16)
+FLASmi = mice(FLAS)
+mi_marginplot(c("MLAT","ENG"),FLASmi,pch=16)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

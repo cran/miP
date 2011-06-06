@@ -5,7 +5,7 @@
 MI Marginplots of all highly correlated variables
 }
 \description{
-Computes correlations between all variables taking all observations without missing values on both variables. Then plots mi_marginplots of all highly correlated variables.
+Computes correlations between all variables taking all observations without missing values on both variables. Then plots MI Marginplots of all highly correlated variables.
 }
 \usage{
 cor_mi_marginplot(input, cor = 0.5, obs = 0.5)
@@ -16,13 +16,13 @@ cor_mi_marginplot(input, cor = 0.5, obs = 0.5)
 MI object produced by mi, mice or Amelia.
 }
   \item{cor}{
-mi_marginplots will be drawn for all pairs of variables that have a correlation higher than abs(cor).
+MI Marginplots between two variables are drawn only if their correlation is higher than the absolute value of this parameter.
 }
   \item{obs}{
-if the rate of observed values is lower than this parameter for two variables, then no mi_marginplot will be drawn for these variables.
+MI Marginplots between two variables are drawn only if the rate of observed values is higher than this parameter.
 }
 }
-\details{This plot is inspired by the marginplot available in the R package VIM.
+\details{This plot is inspired by the marginplot available in the R package VIM. For details see \link[VIM]{marginplot}.
 }
 \value{
 Returns a correlation matrix, all correlations lower than abs(cor) are NA.}

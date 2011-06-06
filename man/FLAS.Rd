@@ -5,7 +5,7 @@
 Data that was collected to investigate the usefulness of FLAS
 }
 \description{
-Raymond (1987) describes data that were collected to investigate the usefulness of newly developed instrument, the Foreign Language Attitude Scale (FLAS), for predicting success in the study of foreign languages. The dataset has missing values.
+Raymond (1987) describes data that were collected to investigate the usefulness of a newly developed instrument, the Foreign Language Attitude Scale (FLAS), for predicting success in the study of foreign languages. The dataset contains missing values.
 }
 \usage{data(FLAS)}
 \format{
@@ -26,7 +26,7 @@ Raymond (1987) describes data that were collected to investigate the usefulness 
   }
 }
 \details{
-This dataset is an adjusted version of the original dataset by Dr. Mark Raymond. The adjustments can be look up in Schafer (1997, p.200).
+This dataset is an adjusted version of the original dataset by Dr. Mark Raymond. The adjustments can be looked up in Schafer (1997, p.200).
 }
 \references{
 Schafer, J.L. (1997), Analysis of Incomplete Multivariate Data. Chapman and Hall, London.

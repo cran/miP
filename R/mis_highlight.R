@@ -47,12 +47,12 @@ for(i in n)
 {
 if(class(ds[,i]) != "factor")
 {
-b = hist(ds[,i],main = paste(names(ds)[i]),col="lightgrey",xlab=paste(names(ds)[i]))$breaks
+b = hist(ds[,i],main = paste(names(ds)[i]),col="lightgrey",xlab="")$breaks
 hist(ds[x,i],add=TRUE,col="red",breaks=b)
 }
 if(class(ds[,i]) == "factor")
 {
-plot(ds[,i],main = paste(names(ds)[i]),col="lightgrey",xlab=paste(names(ds)[i]))
+plot(ds[,i],main = paste(names(ds)[i]),col="lightgrey",xlab="")
 par(new=TRUE)
 plot(ds[x,i],add=TRUE,col="red")
 }
@@ -69,7 +69,7 @@ for(i in 1:dim(ds)[2])
 values = factor(as.integer(is.na(ds[,var_nr])),levels=c(1,0),labels=c("mis","obs"))
 for(i in n)
 {
-spineplot(values~ds[,i],main = paste(names(ds)[i]),col=c("red","lightgrey"),xlab=paste(names(ds)[i]))
+spineplot(values~ds[,i],main = paste(names(ds)[i]),col=c("red","lightgrey"),xlab="",ylab="")
 }
 }
 if(type=="box")
@@ -77,7 +77,7 @@ if(type=="box")
 for(i in n)
 {
 x = which(is.na(ds[,var_nr]))
-boxplot(ds[,i],main = paste(names(ds)[i]),col="lightgrey",xlab=paste(names(ds)[i]),at=0.88)
+boxplot(ds[,i],main = paste(names(ds)[i]),col="lightgrey",xlab="",at=0.88)
 boxplot(ds[x,i],add=TRUE,col="red",at=1.12)
 }
 }

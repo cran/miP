@@ -56,6 +56,8 @@ if(chains==TRUE)
 {
 z = length(x)
 par(mfrow=c(2,ceiling(z/2)))
+if(z == 1)
+{par(mfrow=c(1,1))}
 for(j in x)
 {
 zz = imp_list[[j]]
@@ -78,9 +80,9 @@ z = length(x)
 par(mfrow=c(2,ceiling(z/2)))
 for(j in x)
 {
-zz = matrix(c(table(as.factor(t(imp_list[[j]]))),table(data[,j])),ncol=length(levels(data[,j])),byrow=TRUE)
+zz = matrix(c(table(factor(t(imp_list[[j]]),levels=levels(data[,j]))),table(data[,j])),ncol=length(levels(data[,j])),byrow=TRUE)
 colnames(zz) = levels(data[,j])
-rownames(zz) = c("Imputated","Observed")
+rownames(zz) = c("Imputed","Observed")
 mosaicplot(zz,main=names(data)[j],ylab="Levels")
 }
 }

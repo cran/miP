@@ -19,7 +19,7 @@ MI object produced by mi, mice.
 number of the imputation chain that should be plotted.
 }
 \item{nmis}{
-lowess curve is only plotted if number of imputed values >= nmis.
+lowess curve is only plotted if number of imputed values is higher than this parameter.
 }
 }
 \details{

@@ -5,7 +5,7 @@
 Plots to visualize imputed values
 }
 \description{
-Draws boxplots, densityplots or histograms of the observed and imputed values.
+Draws boxplots, densityplots or histograms of the observed (blue) and imputed (red) values.
 }
 \usage{
 mi_values(input, type = "boxplot1", var = "all", mis_count = 5,
@@ -14,16 +14,16 @@ mi_values(input, type = "boxplot1", var = "all", mis_count = 5,
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{input}{
-MI object produced by mi, mice or AMELIA
+MI object produced by mi, mice or Amelia.
 }
   \item{type}{
-"hist" draws histograms. For "boxplots" or "densityplot" it is necessary to include an ending. Ending "1" plots the observed values and all imputed values for every imputation chain. Ending "2" plots the observed values and all imputed values without distinguishing between the different imputation chains. Ending "3" plots the observed values and all values from the completed imputed dataset for each imputation chain.
+"hist" draws histograms of a specific imputation chain. "boxplot1" / "densityplot1" plots the observed values and all imputed values for every imputation chain. "boxplot2" / "densityplot2" plots the observed values and all imputed values without distinguishing between the different imputation chains. "boxplot3" / "densityplot3" plots the observed values and all values from the completed imputed dataset for each imputation chain.
 }
   \item{var}{
 vector that defines which variables are to be plotted, default is "all".
 }
   \item{mis_count}{
-densityplots for only a few values are mostly useless. Therefore densityplots are only drawn for every variable with more than mis_count missing values.
+densityplots are only drawn for every variable with more than mis_count missing values.
 }
   \item{m_hist}{
 number of the imputation chain that should be plotted. Only if type = "hist".

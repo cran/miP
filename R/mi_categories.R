@@ -30,7 +30,6 @@ data = input$data
 m = input$m
 imp_list = input$imp
 }
-
 x=0
 for(i in 1:length(imp_list)){
 if((length(imp_list[[i]])!=0) && (class(data[,i]) == "factor")){x=c(x,i)}}
@@ -38,7 +37,8 @@ x = x[-1]
 tief = dim(data)[1]
 breit = dim(data)[2]
 i = which(names(data)==var)
-tt = data.matrix(imp_list[[i]])
+levelnames = levels(factor(as.matrix(imp_list[[i]])))
+tt = matrix(as.numeric(factor(as.matrix(imp_list[[i]]))),ncol=m)
 name="Imputation Chain"
 if(sort == TRUE)
 {
@@ -48,11 +48,11 @@ tt[i,] = sort(tt[i,])
 }
 name=""
 }
-color = rainbow(length(levels(as.factor(tt))))
+color = rainbow(length(levelnames))
 image(x=1:nrow(tt),y=1:ncol(tt),tt, ylab=name, xlab="Observation",main=var,col=color,axes=TRUE)
 if(legend==TRUE)
 {
-legend("topright",levels(as.factor(tt)),pch=15,col=color,bg="white")
+legend("topright",levelnames,pch=15,col=color,bg="white",xpd=TRUE)
 }
 ##tt
 }

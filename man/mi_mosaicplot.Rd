@@ -16,7 +16,7 @@ mi_mosaicplot(input, n="all", chains = FALSE)
 MI object produced by mi, mice.
 }
   \item{n}{
-vector of variablenames that should be plotted, default: "all".
+vector of variablenames. Defines which variables are to be plotted, default: "all".
 }
   \item{chains}{
 whether to plot each imputation chain for itself or not.
